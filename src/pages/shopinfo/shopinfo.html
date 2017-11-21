@@ -1,0 +1,294 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Shop Information</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="dismiss()"> 
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-12>
+        <h1>{{Customers.CustName}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides pager>
+    <ion-slide *ngFor="let image of Customers.Cust.shopImage">
+      <img [src]="image.images" *ngIf="image.images" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </ion-slide>
+  </ion-slides>
+  <!-- Location Info -->
+  <ion-card>
+    <ion-card-header>
+      <h2> <b>Location Information</b> </h2>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <b> Address</b> : {{Customers.Cust.address}}
+      </ion-item>
+      <ion-item>
+        <b>Address Contd</b> : {{Customers.Cust.addressContd}}
+      </ion-item>
+      <ion-item>
+        <b>City</b> : {{Customers.Cust.city}}
+      </ion-item>
+      <ion-item>
+        <b>State</b> : {{Customers.Cust.state}}
+      </ion-item>
+      <ion-item>
+        <b>Country</b> : {{Customers.Cust.country}}
+      </ion-item>
+      <ion-item>
+        <b>Zip</b> : {{Customers.Cust.zip}}
+      </ion-item>
+      <ion-item>
+        <b>Facility Type</b> : {{Customers.Cust.facilityType}}
+      </ion-item>
+      <ion-item>
+        <b>Mobile Shop Radius</b> : {{Customers.Cust.radius}}
+      </ion-item>
+      <ion-item>
+        <b>Hourly Rate</b> : $ {{Customers.Cust.hourlyRate}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h2><b>Location Contact</b></h2>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <b>Name</b> : {{Customers.Cust.shopContacts.firstName}} {{Customers.Cust.shopContacts.lastName}}
+      </ion-item>
+      <ion-item>
+        <b>Email</b> : {{Customers.Cust.shopContacts.email}}
+      </ion-item>
+      <ion-item>
+        <b>Phone</b> : {{Customers.Cust.shopContacts.phone}}
+      </ion-item>
+      <ion-item>
+        <b>Cell</b> : {{Customers.Cust.shopContacts.cell}}
+      </ion-item>
+      <ion-item>
+        <b>Designation</b> : {{Customers.Cust.shopContacts.designation}}
+      </ion-item>
+      <ion-item>
+        <b>Contact Type</b> : {{Customers.Cust.shopContacts.contactType}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h1><b>Location Services</b></h1>
+    </ion-card-header>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>General Shop Qualifications</b></h2>
+      <ion-item>
+        <ion-label>Car Shop Storage</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.carShopStorage}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Electronic Billing</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.carShopStorage}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Field Inspection</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.fieldInspection}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>In-House CWI Inspectors</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.inHouseCWIInspectors}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>In-House NDT Level Two Inspectors</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.inHouseNDTLevelTwoInspectors}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Railcar Transloading</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.generalShopQualifications.railcarTransloading}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Railcar Repair And Maintenance</b></h2>
+      <ion-item>
+        <ion-label>Granuflator Bag Repair And Reconditioning</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.granuflatorBagRepairAndReconditioning}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>HM251 TankCar Modifications</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.hM251TankCarModifications}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Interchange Repairs</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.interchangeRepairs}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nine-A Certified</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.nineACertified}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rule 88 Rebuild</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.rule88Rebuild}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Running Repairs</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.runningRepairs}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Service Life Extensions</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.railcarRepairAndMaintenance.serviceLifeExtensions}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Cleaning Capabilities</b></h2>
+      <ion-item>
+        <ion-label>HopperCar Cleaning</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.cleaningCapabilities.hopperCarCleaning}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>PD-CarCleaning</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.cleaningCapabilities.pdCarCleaning}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>TankCar Cleaning</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.cleaningCapabilities.tankCarCleaning}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>TankCar Flaring</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.cleaningCapabilities.tankCarFlaring}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Water Blasting</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.cleaningCapabilities.waterBlasting}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Painting And Lining Capabilities</b></h2>
+      <ion-item>
+        <ion-label>Blast Services</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.blastServices}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Exterior Painting</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.exteriorPainting}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Interior Lining</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.interiorLining}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Interior Lining High Bake</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.interiorLiningHighBake}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Plural Component Paint Application</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.pluralComponentPaintApplication}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Temperature Controlled Environment</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.paintingAndLiningCapabilities.temperatureControlledEnvironment}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Tank Car Requalification</b></h2>
+      <ion-item>
+        <ion-label>Heater CoilTesting</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.tankCarRequalification.heaterCoilTesting}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Inspection Overlay</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.tankCarRequalification.inspectionOverlay}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Safety Valve</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.tankCarRequalification.safetyValve}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ultrasonic Thickness Testing</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.tankCarRequalification.ultrasonicThicknessTesting}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ultrasonic Weld Testing</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.tankCarRequalification.ultrasonicWeldTesting}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Wreck Damage Repair</b></h2>
+      <ion-item>
+        <ion-label>JIC Preparation</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.wreckDamageRepair.jicPreparation}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Wreck Repair</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.wreckDamageRepair.wreckRepair}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Mobile Repair</b></h2>
+      <ion-item>
+        <ion-label>Emergency ResponseService</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.emergencyResponseService}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hour Dispatch</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.hourDispatch}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Interchange Repairs</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.interchangeRepairs}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>NDT Inspection</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.ndtInspection}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>OffSite Flaring</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.offSiteFlaring}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>OffSite High Pressure Transfers</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.offSiteHighPressureTransfers}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>OffSite Low Pressure Transfers</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.offSiteLowPressureTransfers}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Running Repairs</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.runningRepairs}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valve Repairs</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopRepairs.mobileRepair.valveRepairs}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <h2 style="color:#000000;text-align:center;"><b>Location Certifications</b></h2>
+      <ion-item>
+        <ion-label>M214</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopCertifications.m214}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>M215</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopCertifications.m215}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>M216</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopCertifications.m216}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>M1002</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopCertifications.m1002}}"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>M1003</ion-label>
+        <ion-checkbox color="dark" checked="{{Customers.Cust.shopCertifications.m1003}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

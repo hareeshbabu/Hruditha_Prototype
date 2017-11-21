@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>Contact Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding="true" class="scroll-content ionic-scroll overflow-scroll  has-header">
+  <div class="scroll padding">
+    <h4 id="aboutUs-heading2" style="color:#000000;">Contact Us</h4>
+    <div id="aboutUs-markdown4" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <ion-icon name="mail"></ion-icon> info@railcarrx.com</p>
+    </div>
+    <div id="aboutUs-markdown5" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <ion-icon name="call"></ion-icon> 972-753-6500</p>
+    </div>
+    <div id="aboutUs-markdown5" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <ion-icon name="navigate"></ion-icon> (972) 753-6501</p>
+    </div>
+    <div id="aboutUs-markdown5" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <ion-icon name="eye"></ion-icon> 1431 Greenway Dr., Ste. 750 Irving, TX 75038</p>
+    </div>
+  </div>
+  <div class="mapdiv">
+  <sebm-google-map [latitude]="lat" [longitude]="lng" [styles]="mystyles" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [iconUrl]="markerIconLOC" [openInfoWindow]="true">
+      <sebm-google-map-info-window [zIndex]="9999" [disableAutoPan]="true">
+        <p>RailcarRx</p>
+        <p>1431 Greenway Dr #750, Irving, TX 75038</p>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+  </sebm-google-map>
+  </div>
+</ion-content>

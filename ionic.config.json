@@ -1,0 +1,8 @@
+{
+  "name": "MarketPlace",
+  "app_id": "8cedd6c1",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

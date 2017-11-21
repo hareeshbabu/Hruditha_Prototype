@@ -1,0 +1,72 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.app-toolbar {
+    padding: 4px;
+    min-height: 100px !important;
+}
+ion-icon.menu-icon{
+    margin-right: 30px;
+    margin-left: 10px;
+}
+.menu-title .toolbar-title-md{
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    color: white !important;
+    padding-top: 50px !important;
+}
+ion-header.bar-profile {
+    background-color: #03b985 !important;
+    height: 130px;
+}
+ion-item.active > div.item-inner{
+    background-color: #E7E7E7 !important;
+}
+.bar .profile {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding-top: 15px;
+    background-color: #03b985 !important;
+}
+
+.profile .name {
+    color: #FFFFFF;
+    margin-bottom: 5px !important;
+    margin-left: 5px !important;
+    font-weight: 100 !important;
+    font-size: 15px !important;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    height: 85px;
+    width: 75px;
+}
+
+.menu .has-header
+{
+    top: 100px;
+}
+.menu-footer{
+    margin-top: 60px !important;
+}

@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Search List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let shop of Shops">
+    <ion-card-content  (click)="goToShopInfoPage(shop)">
+      <ion-row>
+        <ion-col width-4>
+          <ion-thumbnail item-left>
+            <img [src]="shop.Cust.shopImage[0].images" *ngIf="shop.Cust.shopImage[0].images" style="widows: 20px;">
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col width-8>
+          <ion-row>
+            <ion-col width-12>
+              <h2>{{shop.CustName}}</h2>
+              <p>
+                <ion-icon name="eye"></ion-icon> {{shop.Cust.address}}, {{shop.Cust.city}}, {{shop.Cust.state}}</p>
+              <p>$ {{shop.Cust.hourlyRate}} /Hour</p>
+            </ion-col>
+          </ion-row>
+          <!--<ion-row>
+            <ion-col width-12>
+              <button ion-button clear item-right (click)="goToShopInfoPage(shop)">View</button>
+            </ion-col>
+          </ion-row>-->
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-10>
+          <ion-icon name="person"></ion-icon> {{shop.Cust.shopContacts.firstName}} {{shop.Cust.shopContacts.lastName}}
+        </ion-col>
+        <ion-col width-2>
+          <ion-icon name="call"></ion-icon> {{shop.Cust.shopContacts.phone}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-list *ngFor="let shop of Shops">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img [src]="shop.Cust.shopImage[0].images" *ngIf="shop.Cust.shopImage[0].images" style="widows: 50px;">
+      </ion-thumbnail>
+      <h2>{{shop.CustName}}</h2>
+      <p>{{shop.Cust.city}}</p>
+      <button ion-button clear item-right (click)="goToShopInfoPage(shop)">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>-->

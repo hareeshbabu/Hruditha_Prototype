@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <button ion-button menuToggle> 
+      <ion-icon name='menu' class="pticon"></ion-icon>
+    </button>
+    <ion-title>
+      <!--Market Place-->
+      <!--<img src="assets/images/MarketPlace.png" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;">-->
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="refreshPage()">
+        <ion-icon name="ios-refresh-circle-outline" class="pticon"></ion-icon>
+      </button>
+      <button ion-button icon-only color="royal" (click)="presentPopover()">
+        <ion-icon name="ios-funnel-outline" class="pticon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content nopadding>
+  <div class="form-group">
+    <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="ptgmsearchfield"
+      #search [formControl]="searchControl">
+  </div>
+
+  <sebm-google-map [latitude]="latitude" [longitude]="longitude" [styles]="mystyles" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="markerIconLOC" [openInfoWindow]="true">
+      <!--<sebm-google-map-info-window [disableAutoPan]="true">
+         Hi, this is the content of the <strong>info window</strong>
+       </sebm-google-map-info-window>-->
+    </sebm-google-map-marker>
+
+    <sebm-google-map-marker  *ngFor="let shop of NearByShops" [latitude]="shop.Cust.latitude" [longitude]="shop.Cust.longitude" [iconUrl]="markerIcon"
+      (markerClick)="shopDetailsOpen(shop)">
+    </sebm-google-map-marker>
+  </sebm-google-map>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <p>No of Shops : {{NumberOfShops}}</p>
+    <ion-buttons end>
+      <button ion-button icon-right color="royal" (click)="goToShopsListPage()">
+        <ion-icon name="list-box" class="pticon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

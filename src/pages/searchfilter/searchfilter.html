@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Search Filter Options</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="dismiss()"> 
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Facility Type</ion-label>
+      <ion-select [(ngModel)]="FaclType">
+        <ion-option value="BAM">Brick And Mortar</ion-option>
+        <ion-option value="MIN">Mini</ion-option>
+        <ion-option value="MOB">Mobile</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Covered Raduius</ion-label>
+      <ion-select [(ngModel)]="Radius">
+        <ion-option value="15">15</ion-option>
+        <ion-option value="50">50</ion-option>
+        <ion-option value="100">100</ion-option>
+        <ion-option value="150">150</ion-option>
+        <ion-option value="250">250</ion-option>
+        <ion-option value="500">500</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Certifications</ion-label>
+      <ion-select [(ngModel)]="Cert">
+        <ion-option value="M1002">M1002</ion-option>
+        <ion-option value="M1003">M1003</ion-option>
+        <ion-option value="M214">M214</ion-option>
+        <ion-option value="M215">M215</ion-option>
+        <ion-option value="M216">M216</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Car Type</ion-label>
+      <ion-select [(ngModel)]="CarType">
+        <ion-option value="TankCar">Tank Car</ion-option>
+        <ion-option value="FreightCar">Freight Car</ion-option>
+        <ion-option value="CoalCar">Coal Car</ion-option>
+        <ion-option value="BoxCar">Box Car</ion-option>
+        <ion-option value="FlatCar">Flat Car</ion-option>
+        <ion-option value="ArticulatedCar">Articulated Car</ion-option>
+        <ion-option value="DrawCar">Draw Car</ion-option>
+        <ion-option value="GondolaCar">Gondola Car</ion-option>
+        <ion-option value="HopperCar">Hopper Car</ion-option>
+        <ion-option value="CoveredHopperCar">Covered Hopper Car</ion-option>
+        <ion-option value="RefrigeratorCar">Refrigerator Car</ion-option>
+        <ion-option value="MiscCar">Misc Car</ion-option>
+        <ion-option value="PassengerCar">Passenger Car</ion-option>
+        <ion-option value="VehicularFlat">Vehicular Flat</ion-option>
+        <ion-option value="PTankCar">PTank Car</ion-option>
+        <ion-option value="GPTankCar">GP Tank Car</ion-option>
+        <ion-option value="GPTankHMCar">GP Tank HM Car</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Max Labor Rate : {{MaxLbr}}</ion-label>
+      <!--<ion-input [(ngModel)]="MaxLbr" type="number"></ion-input>-->
+      <ion-range [(ngModel)]="MaxLbr" min="0" max="200" color="secondary">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>200</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="ApplyFliters()">Apply Filters</button>
+</ion-content>

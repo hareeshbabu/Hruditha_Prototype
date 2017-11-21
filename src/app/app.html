@@ -1,0 +1,37 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <div style="margin-top:20px;margin-bottom:20px;">
+            <img src="assets/images/header-logo.png" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+    </ion-header>
+    <ion-content class='side-menu-gradient'>
+        <div class="spacer" data-componentid="spacer1" style="width: 268px; height: 29px;" data-tap-disabled="true"></div>
+        <ion-list>
+            <ion-item menuClose no-lines class="side-menu-item">
+                <ion-icon class="menu-icon" name="ios-home-outline" item-left class="pticon"></ion-icon>
+                Home
+            </ion-item>
+            <ion-item menuClose no-lines class="side-menu-item" (click)="goToAboutUs()">
+                <ion-icon class="menu-icon" name="ios-help-circle-outline" item-left class="pticon"></ion-icon>
+                About Us
+            </ion-item>
+            <ion-item menuClose no-lines class="side-menu-item" (click)="goToContactUs()">
+                <ion-icon class="menu-icon" name="ios-call" item-left class="pticon"></ion-icon>
+                Contact Us
+            </ion-item>
+           <!-- <ion-item menuClose no-lines class="side-menu-item">
+                <ion-icon class="menu-icon" name="ios-star-outline" item-left class="pticon"></ion-icon>
+                Rate Us
+            </ion-item>-->
+        </ion-list>
+        <ion-list>
+            <ion-item no-lines class="menu-footer">
+                <p>© 2017 RailcarRx & PRIMUS Global. All Rights Reserved.</p>
+            </ion-item>
+            <ion-item no-lines>
+                <p>Version : 1.0</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
